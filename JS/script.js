@@ -27,7 +27,7 @@ createApp({
         this.list[index].done = !this.list[index].done;
     },
 
-    delete(index){
+    deleteItem(index){
         this.list.splice(index,1);
     }
 
