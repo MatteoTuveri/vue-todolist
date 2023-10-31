@@ -47,6 +47,7 @@ createApp({
             done : false
         }
         this.list.unshift(newTodo);
+        this.toDoText = '';
     }
 
   }
