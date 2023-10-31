@@ -27,5 +27,9 @@ createApp({
         this.list[index].done = !this.list[index].done;
     },
 
+    delete(index){
+        this.list.splice(index,1);
+    }
+
   }
 }).mount('#app')
