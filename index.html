@@ -17,7 +17,8 @@
     <div id="app">
         <div class="container">
             <ul class="list-group">
-                <li class="list-group-item d-flex align-items-center justify-content-between" v-for="(item, index) in list">
+                <li class="list-group-item d-flex align-items-center justify-content-between"
+                    v-for="(item, index) in list">
                     <div class="d-flex align-items-center">
                         <div class="me-2" @click="check(index)">
                             <i class="fa-regular fa-circle" v-show="!list[index].done"></i>
@@ -36,6 +37,19 @@
                     </div>
                 </li>
             </ul>
+            <div class="d-flex flex-column align-items-center my-4 w-100">
+                <button type="button" class="btn btn-success my-2" @click="addWindow">
+                    <i class="fa-solid fa-plus" v-show="!add"></i>
+                    <i class="fa-solid fa-minus" v-show="add"></i>
+                </button>
+                <div v-show="add" class="mb-3 card p-3 w-50">
+                    <label for="text" class="form-label">Aggiungi ToDo</label>
+                    <input type="text" class="form-control" id="item-text" v-model="toDoText">
+                    <div class="d-flex justify-content-center my-3">
+                        <button type="button" class="btn btn-outline-success" @click="addToDo">Aggiungi</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

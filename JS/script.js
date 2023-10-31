@@ -19,7 +19,11 @@ createApp({
                 id : 3 ,
                 done : false
             },
-        ]
+        ],
+        lastId: 3,
+        add : false,
+        modify : false,
+        toDoText : ''
     }
   },
   methods:{
@@ -29,6 +33,20 @@ createApp({
 
     deleteItem(index){
         this.list.splice(index,1);
+    },
+
+    addWindow(){
+        this.add = !this.add;
+    },
+
+    addToDo(){
+        this.lastId ++;
+        const newTodo ={
+            text : this.toDoText,
+            id : 0,
+            done : false
+        }
+        this.list.unshift(newTodo);
     }
 
   }
